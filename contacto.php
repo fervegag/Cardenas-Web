@@ -38,14 +38,14 @@
         <div class="contact-wrapper animated bounceInUp">
             <div class="contact-form">
                 <h3>Contactanos</h3>
-                <form action="">
+                <form action="email_contacto.php" method="POST">
                     <p>
                         <label>Nombe y Apellidos</label>
-                        <input type="text" name="fullname">
+                        <input type="text" name="fullname" required>
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email" required>
                     </p>
                     <p>
                         <label>Número de teléfono</label>
@@ -53,16 +53,17 @@
                     </p>
                     <p>
                         <label>Asunto</label>
-                        <input type="text" name="affair">
+                        <input type="text" name="affair" required>
                     </p>
                     <p class="block">
                        <label>Mensaje</label>
-                        <textarea name="message" rows="3"></textarea>
+                        <textarea name="message" rows="3" required></textarea>
                     </p>
                     <p class="block">
                         <button>Enviar</button>
                     </p>
                 </form>
+                
             </div>
             <div class="contact-info">
                 <h4>Más Información</h4>
