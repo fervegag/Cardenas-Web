@@ -37,10 +37,7 @@ if (!isset($_SESSION['user_id'])) {
         <?php
             $usuario=$_SESSION['user_id'];
             // $pruebausuario = "JIC-678302";
-            $mysqli = new mysqli("localhost", 'root', '','CardenasDB');
-            if($mysqli->connect_errno){
-                echo "Fallo al conectar a MySQL: (".$mysqli->connect_errno.")".$mysqli->connect_error;
-            }
+            include('dbmanager/config.php');
             $sqlNombre = "SELECT first_name FROM manager WHERE reg_code = '".$usuario."'";
             $resultado = $mysqli->query($sqlNombre);
             if($resultado->num_rows >0){
