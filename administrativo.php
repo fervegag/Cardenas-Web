@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}else{
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +25,9 @@
                 <ul class="show">
                     <li><a href="#">Noticias</a></li>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Confimaciones</a></li>
+                    <li><a href="#">Panel</a></li>
                     <li><a href="#">Seguridad</a></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,7 +35,7 @@
     
     <main class="main">
         <?php
-            $usuario=$_GET["varUser"];
+            $usuario=$_SESSION['user_id'];
             // $pruebausuario = "JIC-678302";
             $mysqli = new mysqli("localhost", 'root', '','CardenasDB');
             if($mysqli->connect_errno){

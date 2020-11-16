@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}else{
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +27,7 @@
                     <li><a href="#">Alumnos</a></li>
                     <li><a href="#">Torneos</a></li>
                     <li><a href="#">Seguridad</a></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,7 +35,7 @@
     
     <main class="main">
         <?php
-            $usuario=$_GET["varUser"];
+            $usuario=$_SESSION['id_user'];
             $mysqli = new mysqli("localhost", 'root', '','CardenasDB');
             if($mysqli->connect_errno){
                 echo "Fallo al conectar a MySQL: (".$mysqli->connect_errno.")".$mysqli->connect_error;
