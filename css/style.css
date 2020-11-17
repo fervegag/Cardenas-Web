@@ -30,6 +30,7 @@ p {
   left: 0;
   top: 0;
   right: 0; /* ocuapamos todo el ancho */
+  z-index: 1;
 }
 
 .header a {
