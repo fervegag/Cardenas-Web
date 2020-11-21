@@ -6,7 +6,7 @@
     <link rel="icon" href="imagenes/dragon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estilobanner.css">
+    <link rel="stylesheet" href="css/deporte.css">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <title>Dragones Cárdenas</title>
 </head>
@@ -29,27 +29,40 @@
         </div>
     </header>
     <main class="main">
-        <section id="banner">
-            <img src="imagenes/imagenbanner.jpg">
-            <div class="contenedor">
-                <h2>DRAGONES CARDENAS</h2>
-                <p>Las artes marciales son un arte porque representa un estilo estético definido y marcial<br><br>¡Aprende las mejores técnicas y métodos creados para la defensa y lucha en combate!</p>
-                <a href="#">Leer más</a>
-            </div>
-        </section>
+        <div class="content">
+            <div class="contact-wrapper animated bounceInUp">
 
-        <section id="bienvenidos">
-            <div class="contenedor">
-                <h2>BIENVENIDOS A NUESTRO CLUB</h2>
-                <p>El deporte es para todas las edades.<br>Si te gustan los deportes de combate recuerda siempre acercarte a entrenar con profesionales.<br>Ven a tomar tu clase de cortesia, conoce el sistema de Artes Marciales Mixtas</p>
-            </div>
-        </section>
+                <h1>Nuestros Deportes</h1>
 
-        <section id="bannerdos">
-            <img src="imagenes/perteneces.png">
-            <div class="contenedor">
+                <div class="caja">
+                    <img src="imagenes/ufcc.png" alt="ufc" class="imgmenu">
+                    <h2>UFC GYM MX</h2>
+                    <p class="txt">El primer gimnasio que integra todas las disciplinas de las artes marciales mixtas</p>
+                </div>
+
+
+                <div class="caja">
+                    <img src="imagenes/moonn.png" alt="ufc" class="imgmenu">
+                    <h2>Moon Moo Won - Moo Duk Kwan</h2>
+                    <p class="txt">Siempre debe haber un balance de lo fuerte y lo suave, lo físico y lo intelectual</p>
+                </div>
+
+
+                <div class="caja">
+                    <img src="imagenes/boxing.jpg" alt="ufc" class="imgmenu">
+                    <h2>Kickboxing y MMA</h2>
+                    <p class="txt">El kickboxing es un deporte de combate de origen Japonés y con desarrollo en occidente</p>
+                </div>
+
+
+                <div class="caja">
+                    <img src="imagenes/artem.png" alt="ufc" class="imgmenu">
+                    <h2>Kainos Artes Marciales</h2>
+                    <p class="txt">Antiguas técnicas de lucha de origen basadas en la lucha cuerpo a cuerpo</p>
+                </div>
             </div>
-        </section>
+
+        </div>
     </main>
     <footer class="footer">
         <div class="contanier-img">

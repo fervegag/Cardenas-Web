@@ -1,0 +1,55 @@
+
+/******************ESTILOS DEPORTE*******************/
+.imgmenu{
+	max-width: 100%;
+	align-content: center;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 15);
+	border-radius: 8%;
+;
+}
+.caja{
+	
+	box-sizing: border-box;
+	padding: 1em;
+	color: #444;
+	width: 49%;
+display: inline-block;
+}
+.txt{
+	color: #444;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+h1{
+	text-align: center;
+	color: #940811;
+}
+h2{
+	text-align: center;
+}
+
+/*++++++++++++++++++++RECUADRO+++++++++++++++++++++*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #E3E3E3;
+  font-family: sans-serif;
+}
+
+.content {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+}
+
+.contact-wrapper {
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 15);
+}
+
+.contact-wrapper > * {
+    padding: 1em;
+}
