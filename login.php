@@ -38,7 +38,7 @@
                 <div class="contenedor">
 
                     <div class="input-contenedor">
-                        <i class="fas fa-envelope icon"></i>
+                        <i class="fas fa-user icon"></i>
                         <input type="text" placeholder="Número de registro" name="usuario" id="usuario" required>
 
                     </div>
@@ -50,6 +50,7 @@
                     <input type="submit" value="Ingresar" class="button">
                     <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
                     <p>¿No tienes una cuenta? <a class="link" href="registro.php"> <b> Registrate </b> </a></p>
+                    <p><a href="recuperar.php" class="link">He olvidado mi contraseña</a></p>
                 </div>
             </form>
             <?php

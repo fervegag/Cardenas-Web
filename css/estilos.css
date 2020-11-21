@@ -64,6 +64,11 @@ p{
 .link:hover{
      color: cadetblue;
 }
+.titulo{
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+    margin-bottom: 10px;
+}
 @media(min-width:768px)
 {
     .formulario{
