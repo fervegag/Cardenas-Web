@@ -69,6 +69,14 @@ p{
     color: rgb(252, 252, 252);
     margin-bottom: 10px;
 }
+.lista{
+    border: 1px solid #ffff;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    width: 75%;
+    
+}
 @media(min-width:768px)
 {
     .formulario{

@@ -40,24 +40,24 @@
 
               <div class="input-contenedor">
                   <i class="fas fa-user icon"></i>
-                  <input type="text" placeholder="Nombre Completo">
+                  <input type="text" placeholder="Nombre Completo" required>
 
                   </div>
 
                   <div class="input-contenedor">
                   <i class="fas fa-envelope icon"></i>
-                  <input type="text" placeholder="Correo Electronico">
+                  <input type="text" placeholder="Correo Electronico" required>
 
                   </div>
 
                   <div class="input-contenedor">
                  <i class="fas fa-key icon"></i>
-                  <input type="password" placeholder="Contraseña">
+                  <input type="password" placeholder="Contraseña" required>
 
                   </div>
                   <input type="submit" value="Registrate" class="button">
                   <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-                  <p>¿Ya tienes una cuenta?<a class="link" href="login.html"> <b> Iniciar Sesion</b></a></p>
+                  <p>¿Ya tienes una cuenta?<a class="link" href="login.php"> <b> Iniciar Sesion</b></a></p>
               </div>
              </form>
 
