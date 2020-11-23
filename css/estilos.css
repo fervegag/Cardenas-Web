@@ -23,11 +23,17 @@ h1{
     font-size: 40px;
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="tel"]{
     font-size: 20px;
     width: 82%;
     padding: 10px;
     border: none;
+}
+input[type="date"]{
+    color: gray;
 }
 .input-contenedor{
     margin-bottom: 15px;
@@ -75,7 +81,14 @@ p{
     margin-bottom: 15px;
     font-size: 15px;
     width: 75%;
-    
+}
+.lista2{
+    color: gray;
+    border: 1px solid #ffff;
+    padding: 8px;
+    font-size: 15px;
+    width: 82%;
+    font-size: 20px;
 }
 @media(min-width:768px)
 {
