@@ -13,6 +13,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagenes/dragon.ico">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <title>Dragones Cárdenas</title>
 </head>
@@ -89,7 +90,7 @@ if (!isset($_SESSION['user_id'])) {
                     $gym = $row['gym_name'];
                 }
             }
-            else{ echo '<h1>Falló</h1>';}
+            else{ $gym = 'Desconocido';}
             
             echo '<div> <p>Gimnasio: '.$gym.'</p>
                         <p>Cinta: '.$Grado.'</p>
