@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}else{
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,18 +25,17 @@
 </head>
 
 <body>
-    <header class="header">
+<header class="header">
         <div class="container logo-nav-container">
-            <!-- <a href="#" class="logo"> DRAGONES <br> CÁRDENAS </br></a> -->
             <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="nosotros.php">Nosotros</a></li>
-                    <li><a href="deporte.php">Deporte</a></li>
-                    <li><a href="contacto.php">Contacto</a></li>
-                    <li><a href="login.php">Profesores</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="confirmaciones.php">Panel</a></li>
+                    <li><a href="#">Seguridad</a></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,7 +74,7 @@
                                             <td class="cinta"><?php echo $row2['color'] ?></td>
                                             <td>
                                                 <a href="aprobaciones.php?code=<?php echo $row2['reg_code']; ?>" class="link_ap_prof">Aprobar</a>
-                                                <a href="rechazar_solicitud_prof.php?code=<?php echo $row2['reg_code']; ?>" class="link_rech_prof">Rechazar</a>
+                                                <a href="rechazos.php?code=<?php echo $row2['reg_code']; ?>" class="link_rech_prof">Rechazar</a>
                                             </td>
                                         </tr>
                         <?php
@@ -110,7 +118,7 @@
                                         <td class="cinta"><?php echo $row2['color'] ?></td>
                                         <td>
                                             <a href="aprobaciones.php?code=<?php echo $row2['reg_code']; ?>" class="link_ap_admin">Aprobar</a>
-                                            <a href="rechazar_solicitud_admin.php?code=<?php echo $row2['reg_code']; ?>" class="link_rech_admin">Rechazar</a>
+                                            <a href="rechazos.php?code=<?php echo $row2['reg_code']; ?>" class="link_rech_admin">Rechazar</a>
                                         </td>
                                     </tr>
                     <?php
