@@ -31,11 +31,12 @@ if (!isset($_SESSION['user_id'])) {
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
+                    <li><a href="administrativo.php">Perfil</a></li>
                     <li><a href="#">Noticias</a></li>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="confirmaciones.php">Panel</a></li>
-                    <li><a href="#">Seguridad</a></li>
-                    <li><a href="logout.php">Cerrar sesión</a></li>
+                    <li><a href="panel.php">Panel</a></li>
+                    <li><a href="seguridad_admin.php">Seguridad</a></li>
+                    <li><a href="logout.php">Salir</a></li>
                 </ul>
             </nav>
         </div>

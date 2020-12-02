@@ -26,11 +26,12 @@ if (!isset($_SESSION['user_id'])) {
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
+                    <li><a href="#">Perfil</a></li>
                     <li><a href="index.php">Noticias</a></li>
                     <li><a href="#">Alumnos</a></li>
                     <li><a href="#">Torneos</a></li>
-                    <li><a href="#">Seguridad</a></li>
-                    <li><a href="logout.php">Cerrar sesión</a></li>
+                    <li><a href="seguridad_prof.php">Seguridad</a></li>
+                    <li><a href="logout.php">Salir</a></li>
                 </ul>
             </nav>
         </div>
