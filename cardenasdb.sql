@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2020 a las 18:47:41
+-- Tiempo de generación: 02-12-2020 a las 22:09:01
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -100,7 +100,8 @@ CREATE TABLE `gym` (
 --
 
 INSERT INTO `gym` (`gym_code`, `gym_name`, `adress`) VALUES
-(1, 'Corps Gimnasio', 'Popolna 81, Pedregal de San Nicolás, Tlalpan, 14100, Ciudad de México');
+(1, 'Desconocido', 'Sin Locación'),
+(2, 'Corps Gimnasio', 'Popolna 81, Pedregal de San Nicolás, Tlalpan, 14100, Ciudad de México');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,7 @@ CREATE TABLE `instructor` (
   `phone_num` varchar(10) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `belt_id1` int(11) DEFAULT NULL,
-  `gym_code1` int(11) DEFAULT NULL
+  `gym_code1` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -124,7 +125,8 @@ CREATE TABLE `instructor` (
 --
 
 INSERT INTO `instructor` (`reg_code`, `first_name`, `last_name`, `birthdate`, `phone_num`, `email`, `belt_id1`, `gym_code1`) VALUES
-('JCM-040819', 'Juan Carlos', 'Noguez Hernández', '1980-08-14', '5540493682', 'JuanCN@gmail.com', 10, 1);
+('FVG-230198', 'Fernando', 'Vega', '1998-01-23', '5523966184', 'fervega.ipn@gmail.com', 10, 1),
+('JCM-040819', 'Juan Carlos', 'Noguez Hernández', '1980-08-14', '5540493682', 'JuanCN@gmail.com', 10, 2);
 
 -- --------------------------------------------------------
 
@@ -146,8 +148,8 @@ CREATE TABLE `logininfo` (
 INSERT INTO `logininfo` (`user_code`, `pass`, `status_user`, `type_user`) VALUES
 ('JCM-040819', 'passprof', b'1', b'0'),
 ('JIC-678302', 'admin', b'1', b'1'),
-('VGF-846292', '230198', b'1', b'1'),
-('FIN-123456', 'facil', b'0', b'1');
+('FVG-230198', 'ruFv8PZIEL201VX', b'1', b'0'),
+('IRZ-670198', 'NTysdMCU8ITgS3', b'1', b'1');
 
 -- --------------------------------------------------------
 
@@ -171,6 +173,7 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`reg_code`, `first_name`, `last_name`, `birthdate`, `phone_num`, `email`, `occupation`, `belt_id3`) VALUES
+('IRZ-670198', 'Irsa', 'Zamora', '1998-10-21', '5612184221', 'nandosroom@outlook.com', NULL, 10),
 ('JIC-678302', 'Juan Ivan', 'Cárdenas G.', '1988-07-23', '5566778899', 'example2@gmail.com', 'Director Técnico', 15);
 
 -- --------------------------------------------------------
@@ -310,7 +313,7 @@ ALTER TABLE `fight`
 -- AUTO_INCREMENT de la tabla `gym`
 --
 ALTER TABLE `gym`
-  MODIFY `gym_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `gym_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `news`
