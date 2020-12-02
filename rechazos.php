@@ -34,4 +34,5 @@ if($resultTipo->num_rows > 0){
 }else{
     echo "<script>alert('No se encontraron resultados')</script>";
 }
+$mysqli->close();
 ?>

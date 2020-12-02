@@ -100,6 +100,7 @@ if (!isset($_SESSION['user_id'])) {
                 } else {
                     //No se encontró nada
                 }
+                $mysqli->close();
             }
             ?>
         </div>

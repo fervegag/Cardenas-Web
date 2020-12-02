@@ -3,8 +3,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
-}else{
-
+} else {
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <div class="container logo-nav-container">
             <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
             <span class="menu-icon">Ver menú</span>
@@ -42,7 +41,59 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </header>
     <main class="main">
-
+        <div class="ConfirmProf">
+            <h1 class="title-prof">Lista de profesores</h1>
+            <form method="POST">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Registro</th>
+                            <th colspan="2">Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Cinta</th>
+                            <th>Gimnasio</th>
+                            <th>Operación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include('dbmanager/config.php');
+                        $sqlCodigos = "SELECT user_code FROM logininfo WHERE type_user = '0' AND status_user = '1'";
+                        $resultado = $mysqli->query($sqlCodigos);
+                        if ($resultado->num_rows > 0) {
+                            $varSaveProf = array();
+                            for ($c = 0; $row = $resultado->fetch_assoc(); $c++) {
+                                $varSaveProf[$c] = $row['user_code'];
+                                $sqlPendientes = "SELECT reg_code, first_name, last_name, phone_num, email, color, gym_name FROM instructor 
+                                INNER JOIN belt ON instructor.belt_id1 = belt.belt_id
+                                INNER JOIN gym ON instructor.gym_code1 = gym.gym_code where reg_code = '" . $varSaveProf[$c] . "'";
+                                $infoProf = $mysqli->query($sqlPendientes);
+                                if ($infoProf->num_rows > 0) {
+                                    while ($row2 = $infoProf->fetch_assoc()) { ?>
+                                        <tr class="infoProfe">
+                                            <td class="code"><?php echo $row2['reg_code'] ?></td>
+                                            <td class="name"><?php echo $row2['first_name'] ?></td>
+                                            <td class="last-n"><?php echo $row2['last_name'] ?></td>
+                                            <td class="phone-n"><?php echo $row2['phone_num'] ?></td>
+                                            <td class="email-add"><?php echo $row2['email'] ?></td>
+                                            <td class="cinta"><?php echo $row2['color'] ?></td>
+                                            <td class="gym_code"><?php echo $row2['gym_name'] ?></td>
+                                            <td>
+                                                <a href="eliminar_prof.php?code=<?php echo $row2['reg_code']; ?>" class="link_rech_prof">Eliminar</a>
+                                            </td>
+                                        </tr>
+                        <?php
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <script src="js/eliminar_prof.js"></script>
     </main>
     <footer class="footer">
         <div class="contanier-img">
