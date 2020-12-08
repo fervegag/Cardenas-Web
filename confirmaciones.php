@@ -16,7 +16,8 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/confirmaciones.css">
+    <!-- <link rel="stylesheet" href="css/confirmaciones.css"> -->
+    <link rel="stylesheet" href="css/style_prof.css">
     <title>Confirmaciones</title>
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -96,7 +97,7 @@ if (!isset($_SESSION['user_id'])) {
                         <th>Registro</th>
                         <th colspan="2">Nombre</th>
                         <th>Cinta</th>
-                        <th>Confirmar</th>
+                        <th>Operación</th>
                     </tr>
                 </thead>
                 <tbody>
