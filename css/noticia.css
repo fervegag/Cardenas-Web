@@ -1,0 +1,143 @@
+
+/******************ESTILOS SECCIONES NOTICIAS*******************/
+main{
+	margin-top: 30px;
+}
+#principal{
+	width: 80%;
+	height: auto; overflow: hidden;
+	border: 0px solid;
+	margin: 10px auto;
+}
+#publicaciones{
+	width: 70%;
+	height: auto; overflow: hidden;
+	border: 0px solid red;
+	margin-top: 10px;
+	float: left;
+}
+.post{
+	width: 96%;
+	height: auto; overflow: hidden;
+	padding: 7px;
+	background: #fdfdfd;
+	border-left-style: solid;
+	border-left-width: 5px;
+	border-left-color: #940811;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px #ccc; 
+	margin-bottom: 20px;
+}
+#publicaciones a .titulo-post{
+	color: #6e6e6e;
+	font-size: 22px;
+}
+#publicaciones a .titulo-post:hover{
+	text-decoration: underline;
+}
+
+#publicaciones .img-post{
+	width: 150px;
+	height: 100px;
+	float: left;
+	margin: 7px 7px 7px 0px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#publicaciones .datos-publicaciones{
+	font-family: 'calibri light';
+	color: blue;
+}
+#publicaciones .texto-post{
+	font-size: 16px;
+	color: #000;
+	padding: 5px;
+	text-align: justify;
+}
+
+/*++++++++++++++++++++++++++BARRA LATERAL SIDEBAR+++++++++++++++++++++++++++++++++++++*/
+#sidebar{
+	float: right;
+	width: 29%;
+	border: 0px solid;
+	height: auto; 
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+#buscar, #categorias, #sitios-amigos, #ultimos-post{
+	border-radius: 10px;
+	width: 98%;
+	border: 1px solid #ccc;
+	height: auto; overflow: hidden;
+	margin-bottom: 20px;
+	background: #fff; 
+
+}
+/*
+#buscar input[type="text"]{
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 5px #ccc inset;
+	padding: 10px 4px;
+	border-radius: 10px;
+	width: 93%;
+	margin-left: 4px;
+	margin-bottom: 4px;
+}
+
+#buscar .boton{
+	border-radius: 10px;
+	padding: 5px 4px;
+	margin-left: 5px;
+	border: 0px;
+	color: #000;
+	background: #BFC9CA;
+	box-shadow: 0px 5px 5px #ccc;
+	margin-bottom: 10px;
+}
+
+#buscar .logo-google{
+	width: 115px;
+	height: 35px;
+	margin-top: 0px;
+}*/
+
+.encabezado-sidebar{
+	width: 100%;
+	height: 35px;
+	background: #940811;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 8px;
+	margin-top: 2px;
+}
+
+.enlace-sidebar{
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 5px;
+	color: #2E4053;
+}
+
+.enlace-sidebar:hover{
+	background: #BFC9CA;
+}
+.button{
+    width: 100%;
+    padding: .7em;
+    outline: 0;
+    color:rgb(255, 255, 255) ;
+	border-bottom: 1px solid #d63031;
+	background: #000;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+.operaciones{
+	float: right;
+}

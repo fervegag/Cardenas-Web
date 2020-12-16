@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
             <nav class="navigation">
                 <ul class="show">
                     <li><a href="#">Perfil</a></li>
-                    <li><a href="index.php">Noticias</a></li>
+                    <li><a href="noticias_profesor.php">Noticias</a></li>
                     <li><a href="alumnos.php">Alumnos</a></li>
                     <li><a href="#">Torneos</a></li>
                     <li><a href="seguridad_prof.php">Seguridad</a></li>
