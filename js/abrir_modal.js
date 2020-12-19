@@ -13,3 +13,8 @@ $('#editarnoticia').on('show.bs.modal', function (event) {
     modal.find('.modal-body textarea').text(noticia)
     modal.find('.modal-body input[name="news_name"]').val(name)
   })
+  // Abrir modal para agregar una noticia nueva
+$('#nuevaNoticia').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+
+})

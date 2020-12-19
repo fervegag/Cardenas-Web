@@ -52,12 +52,15 @@ if (!isset($_SESSION['user_id'])) {
             </section>
 
         </section> -->
-            <section id="sidebar">
-                <section class="post">
+            <!-- <section id="sidebar"> -->
+            <!-- <section class="post"> -->
 
-                    <button><i class="far fa-newspaper"> Nueva Noticia</i></button>
-                </section>
-            </section>
+            <!-- <button><i class="far fa-newspaper"> Nueva Noticia</i></button> -->
+
+            <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#nuevaNoticia" data-nuevaNoticia="Nueva"><i class="far fa-newspaper"> Nueva Noticia</i></button>
+
+            <!-- </section> -->
+            <!-- </section> -->
             <?php
             $usuario = $_SESSION['user_id'];
             include('dbmanager/config.php');
@@ -92,7 +95,7 @@ if (!isset($_SESSION['user_id'])) {
                             <span class="operaciones">
                                 <a href="eliminar_noticia.php?id=<?php echo $idNoticia; ?>" class="link_delete"><i class="fas fa-trash-alt"></i></a>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarnoticia" data-whatever="<?php echo $idNoticia ?>">Open modal for <?php echo $idNoticia ?> </button> -->
-                                <a href="#" data-toggle="modal" data-target="#editarnoticia" data-whatever="<?php echo $idNoticia ?>" data-noticia="<?php echo $noticia?>" data-name="<?php echo $titulo ?>"><i class="fas fa-edit"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#editarnoticia" data-whatever="<?php echo $idNoticia ?>" data-noticia="<?php echo $noticia ?>" data-name="<?php echo $titulo ?>"><i class="fas fa-edit"></i></a>
                             </span>
                         </article>
                     </section>
@@ -133,15 +136,55 @@ if (!isset($_SESSION['user_id'])) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="actualizarNoticia()">Send message</button>
-
-
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" onclick="actualizarNoticia()">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nuevaNoticia" tabindex="-1" role="dialog" aria-labelledby="nuevaNoticiaLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nuevaNoticiaLabel">Nueva Noticia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="agregarNoticia.php" method="POST" enctype="multipart/form-data" onsubmit="return validar();">
+                            <div class="form-group">
+                                <label for="add_titulo_noticia" class="col-form-label">Nombre de la noticia:</label>
+                                <input type="text" class="form-control" id="add_titulo_noticia" name="add_titulo_noticia" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="add_noticia" class="col-form-label">Noticia:</label>
+                                <textarea class="form-control" id="add_noticia" name="add_noticia" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="add_imagen" class="col-form-label">Imagen:</label>
+                                <input type="file" name="add_imagen" id="add_imagen" required>
+                            </div>
+                            <div class="form-group botones">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Agregar</button>
+                            </div>
+                            <style>
+                                .botones {
+                                    float: right;
+                                    display: inline-block;
+                                }
+                            </style>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                       
                     </div>
                 </div>
             </div>
         </div>
         <script src="js/eliminar_noticia.js"></script>
+        <script src="js/validar_noticia.js"></script>
 
 
         <!-- Scripts para Boostrap -->
