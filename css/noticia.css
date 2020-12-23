@@ -45,6 +45,15 @@ main{
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
+#publicaciones .perfil{
+	width: 200px;
+	height: 150px;
+	float: left;
+	margin: 7px 7px 7px 0px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
 
 #publicaciones .datos-publicaciones{
 	font-family: 'calibri light';
