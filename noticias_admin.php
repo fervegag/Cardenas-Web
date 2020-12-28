@@ -206,6 +206,8 @@ if (!isset($_SESSION['user_id'])) {
             <p align=center href="#" class="bobs"> Política de Privacidad </p> </b>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/javaS1.js"></script>
 
 </body>
 

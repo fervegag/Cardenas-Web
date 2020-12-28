@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
-                    <li><a href="#">Perfil</a></li>
+                    <li><a href="profesor.php">Perfil</a></li>
                     <li><a href="noticias_profesor.php">Noticias</a></li>
                     <li><a href="#">Alumnos</a></li>
                     <li><a href="#">Torneos</a></li>
@@ -307,7 +307,8 @@ if (!isset($_SESSION['user_id'])) {
             <p align=center href="#" class="bobs"> Política de Privacidad </p> </b>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/javaS1.js"></script>
 </body>
 
 </html>

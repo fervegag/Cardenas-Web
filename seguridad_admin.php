@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
             <nav class="navigation">
                 <ul class="show">
                     <li><a href="administrativo.php">Perfil</a></li>
-                    <li><a href="index.php">Noticias</a></li>
+                    <li><a href="noticias_admin.php">Noticias</a></li>
                     <li><a href="#">Eventos</a></li>
                     <li><a href="panel.php">Panel</a></li>
                     <li><a href="#">Seguridad</a></li>
@@ -119,6 +119,8 @@ if (!isset($_SESSION['user_id'])) {
             <p align=center href="#" class="bobs"> Política de Privacidad </p> </b>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/javaS1.js"></script>
 </body>
 
 </html>
