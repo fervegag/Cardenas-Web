@@ -52,3 +52,19 @@ function actualizarAlumno(){
         window.location="./actualizar_Alumno.php?varid="+id+"&varnombre="+nombre+"&varapellidos="+apellidos+"&vartel="+tel+"&varemer="+emer+"&varestado="+estado+"&vardir="+direccion;
     }
 }
+
+function actualizarGym(){
+    const id = $('#id_gym').val();
+    const name = $('#nombre_gym').val();
+    const adress = $('#adress').val();
+
+    if(name.trim() == "" || adress.trim() == ""){
+        alert("Todos los campos son obligatorios");
+    }else if(name.length > 24){
+        alert("El nombre es muy largo");
+    }else if(adress.length > 250){
+        alert("La dirección es muy larga");
+    }else{
+        window.location="./actualizar_Gym.php?varid="+id+"&varname="+name+"&varadress="+adress;
+    }
+}

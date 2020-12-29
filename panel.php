@@ -46,6 +46,8 @@ if (!isset($_SESSION['user_id'])) {
         <a href="confirmaciones.php">CONFIRMACIONES</a>
         </br>
         <a href="administra_prof.php">ADMINISTRACIÓN DE PROFESORES</a>
+        <br>
+        <a href="gimnasios.php">GESTIONAR GIMNASIOS</a>
     </main>
     <footer class="footer">
         <div class="contanier-img">
