@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="imagenes/dragon.ico">
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <title>Dragones Cárdenas</title>
 </head>
@@ -102,7 +103,7 @@ if (!isset($_SESSION['user_id'])) {
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <!-- <div class="col-sm-4"> -->
                     <div class="card text-center">
                         <div class="option">
                             <div class="title">
@@ -119,15 +120,93 @@ if (!isset($_SESSION['user_id'])) {
                                 <li> <i class="fa fa-calendar" aria-hidden="true"> </i> <b> Fecha de nacimiento</b> <br> <?php echo $Nacimiento ?> </br> </li>
                                 <li> <i class="fa fa-envelope-square" aria-hidden="true"> </i> <b> Email</b> <br> <?php echo $Correo ?> </br> </li>
                                 <li> <i class="fa fa-phone" aria-hidden="true"> </i> <b> Télefono</b> <br> <?php echo $Numero ?> </br> </li>
+                                <li class="boton"><button class="update" data-toggle="modal" data-target="#editarprof" data-whatever="<?php echo $usuario ?>" data-grado="<?php echo $Grado ?>" data-email="<?php echo $Correo ?>" data-telefono="<?php echo $Numero ?>">Actualizar</button></li>
                             </ul>
                         </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+        
+        <div class="modal fade" id="editarprof" tabindex="-1" role="dialog" aria-labelledby="editarprofLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarprofLabel">Actualización</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="id_prof" class="col-form-label">Código de Profesor:</label>
+                                <input type="text" class="form-control" id="id_prof" name="recipient-name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="gym" class="col-form-label">Gimnasio:</label>
+                                <!-- <textarea class="form-control" id="cinta" name="cinta"></textarea> -->
+                                <select name="gym" id="gym" class="form-control">
+                                    <option value="0">Sleccione una opción</option>
+                                    <?php
+                                    $sqlCinta = "SELECT * FROM gym WHERE gym_code != '1'";
+                                    $resultCinta = $mysqli->query($sqlCinta);
+                                    if($resultCinta->num_rows > 0){
+                                        while($row2 = $resultCinta->fetch_assoc()){
+                                            $idGym = $row2['gym_code'];
+                                            $gym = $row2['gym_name']; 
+                                            ?>
+                                            <option value="<?php echo $idGym ?>"><?php echo $gym ?></option>
+                                        <?php
+                                        }
+                                    }else{
+                                        echo "No se devolvieron resultados";
+                                    }
+                                    
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cinta" class="col-form-label">Cinta:</label>
+                                <!-- <textarea class="form-control" id="cinta" name="cinta"></textarea> -->
+                                <select name="cinta" id="cinta" class="form-control">
+                                    <option value="0">Sleccione una opción</option>
+                                    <?php
+                                    $sqlCinta = "SELECT * FROM belt";
+                                    $resultCinta = $mysqli->query($sqlCinta);
+                                    if($resultCinta->num_rows > 0){
+                                        while($row2 = $resultCinta->fetch_assoc()){
+                                            $idCinta = $row2['belt_id'];
+                                            $color = $row2['color']; 
+                                            ?>
+                                            <option value="<?php echo $idCinta ?>"><?php echo $color ?></option>
+                                        <?php
+                                        }
+                                    }else{
+                                        echo "No se devolvieron resultados";
+                                    }
+                                    $mysqli->close();
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="col-form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="correo" name="correo">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="col-form-label">Teléfono:</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" onclick="actualizarProf()">Actualizar</button>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-        $mysqli->close();
-        ?>
+
 
     </main>
 
@@ -144,6 +223,11 @@ if (!isset($_SESSION['user_id'])) {
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/javaS1.js"></script>
+    <!-- Scripts para Boostrap -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/abrir_modal.js"></script>
+    <script src="js/acciones_modal.js"></script>
 
 </body>
 

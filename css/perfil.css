@@ -1,38 +1,38 @@
 /* by Jamal Hassouni*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 body{
-  position:static;
-  margin-top: 6rem;
+  position:static !important;
+  margin-top: 6rem !important;
   font-family: 'Roboto', sans-serif !important;
 }
 section{
   position:static;
-  width: 100%;
+  width: 100% !important;
   height: 100vh;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-          padding: 140px 0;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+          padding: 140px 0 !important;
 }
 .card{
-  max-width: 300px;
-  height: auto;
+  max-width: 340px !important;
+  height: auto !important;
   background: linear-gradient(-5deg, #000000, #940811);
-  border-radius: 15px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  border-radius: 15px !important; 
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
   -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
           box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
 -webkit-transition: .5s;
 transition: .5s;
 }
 
-}
+/* }
 .col-sm-4:nth-child(2) .card,
 .col-sm-4:nth-child(2) .card .title .fa{
   background: linear-gradient(-45deg,#000000, #940811);
 }
 
-}
+} */
 .card::before{
   content: '';
   bottom: 0;
@@ -74,4 +74,29 @@ padding: 0;
 list-style: none;
 color: #fff;
 font-size: 16px;
+}
+.update{
+  border-radius: 5px;
+	padding: 5px 4px;
+	margin-left: 5px;
+	border: 0px;
+	color: rgb(248, 248, 248);
+	background:  #940811;
+	box-shadow: 0px 5px 5px rgb(0, 0, 0);
+	margin-bottom: 10px;
+	font-size: 13pt;
+  margin-top: 10px;
+  width: 45%;
+}
+.boton{
+  text-align: right;
+}
+
+.container .card .row .col-sm-4 .option{
+  /* display: inline-block; */
+  justify-content: center !important;
+  margin: auto;
+}
+.col-sm-4{
+  width: auto;
 }

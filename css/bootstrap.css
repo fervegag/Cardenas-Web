@@ -55,18 +55,18 @@ b,
 /* strong {
   font-weight: bold;
 } */
-dfn {
+/* dfn {
   font-style: italic;
-}
-h1 {
+} */
+/* h1 {
   margin: .67em 0;
   font-size: 2em;
-}
-mark {
+} */
+/* mark {
   color: #000;
   background: #ff0;
-}
-small {
+} */
+/* small {
   font-size: 80%;
 }
 sub,
@@ -81,7 +81,7 @@ sup {
 }
 sub {
   bottom: -.25em;
-}
+} */
 /* img {
   border: 0;
 } */
@@ -175,9 +175,9 @@ legend {
 textarea {
   overflow: auto;
 }
-optgroup {
+/* optgroup {
   font-weight: bold;
-}
+} */
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 
@@ -731,9 +731,9 @@ optgroup {
 .glyphicon-floppy-open:before {
   content: "\e176";
 }
-.glyphicon-credit-card:before {
+/* .glyphicon-credit-card:before {
   content: "\e177";
-}
+} */
 .glyphicon-transfer:before {
   content: "\e178";
 }
@@ -905,12 +905,12 @@ optgroup {
 .glyphicon-education:before {
   content: "\e233";
 }
-.glyphicon-option-horizontal:before {
+/* .glyphicon-option-horizontal:before {
   content: "\e234";
 }
 .glyphicon-option-vertical:before {
   content: "\e235";
-}
+} */
 /* .glyphicon-menu-hamburger:before {
   content: "\e236";
 } */
@@ -977,9 +977,7 @@ optgroup {
 /* .glyphicon-menu-left:before {
   content: "\e257";
 }
-.glyphicon-menu-right:before {
-  content: "\e258";
-}
+
 .glyphicon-menu-down:before {
   content: "\e259";
 }
@@ -1093,7 +1091,7 @@ hr {
 [role="button"] {
   cursor: pointer;
 }
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -1109,7 +1107,7 @@ h6,
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
-}
+} */
 h1 small,
 h2 small,
 h3 small,
@@ -1237,9 +1235,9 @@ mark,
 .text-right {
   text-align: right;
 }
-.text-center {
+/* .text-center {
   text-align: center;
-}
+} */
 .text-justify {
   text-align: justify;
 }
@@ -1530,10 +1528,10 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 } */
-.row {
+/* .row {
   margin-right: -15px;
   margin-left: -15px;
-}
+} */
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
@@ -1687,9 +1685,9 @@ pre code {
 .col-xs-offset-3 {
   margin-left: 25%;
 }
-.col-xs-offset-2 {
+/* .col-xs-offset-2 {
   margin-left: 16.66666667%;
-}
+} */
 .col-xs-offset-1 {
   margin-left: 8.33333333%;
 }
@@ -3755,9 +3753,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a > img {
   max-width: none;
 } */
-.nav-tabs {
+/* .nav-tabs {
   border-bottom: 1px solid #ddd;
-}
+} */
 /* .nav-tabs > li {
   float: left;
   margin-bottom: -1px;
@@ -3780,7 +3778,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 } */
-.nav-tabs.nav-justified {
+/* .nav-tabs.nav-justified {
   width: 100%;
   border-bottom: 0;
 }
@@ -3790,7 +3788,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs.nav-justified > li > a {
   margin-bottom: 5px;
   text-align: center;
-}
+} */
 /* .nav-tabs.nav-justified > .dropdown .dropdown-menu {
   top: auto;
   left: auto;
