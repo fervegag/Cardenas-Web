@@ -163,3 +163,20 @@ main{
 .operaciones{
 	float: right;
 }
+.inscripcion{
+	border-radius: 5px;
+	padding: 5px 4px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 0px;
+	color: rgb(248, 248, 248);
+	background:  #940811;
+	box-shadow: 0px 5px 5px rgb(0, 0, 0);
+	margin-bottom: 10px;
+	font-size: 13pt;
+	margin-top: 10px;
+	width: 20%;
+}
+.btni{
+	text-align: right;
+}

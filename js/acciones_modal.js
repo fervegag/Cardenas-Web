@@ -112,3 +112,20 @@ function actualizarProf(){
         window.location="./actualizarProf.php?varcodigo="+codigo+"&varcinta="+cinta+"&varcorreo="+correo+"&vartelefono="+telefono+"&vargym="+gym;
     }
 }
+function actualizarEvento(){
+    const id = $('#id_evento').val();
+    const nombre = $('#nombre').val();
+    const tipo = $('#tipo').val();
+    const fecha = $('#fecha').val();
+    const hora = $('#hora').val();
+    const direccion = $('#direccion').val();
+    if(nombre.trim() == "" || tipo.trim() == "" || fecha.trim() == "" || hora.trim() == "" || direccion.trim() == ""){
+        alert("Todos los campos son obligatorios");
+    }else if(nombre.length > 25){
+        alert("El nombre es muy largo")
+    }else if(tipo.length > 15){
+        alert("El tipo de evento es muy largo")
+    }else{
+        window.location="./actualizarEvento.php?varid="+id+"&varnombre="+nombre+"&vartipo="+tipo+"&varfecha="+fecha+"&varhora="+hora+"&vardireccion="+direccion;
+    }
+}

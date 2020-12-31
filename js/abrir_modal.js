@@ -72,3 +72,25 @@ $('#editarprof').on('show.bs.modal', function (event) {
   modal.find('.modal-body input[name="correo"]').val(correo)
   modal.find('.modal-body input[name="telefono"]').val(telefono)
 })
+// Abrir modal para editar el evento
+$('#editarevento').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') 
+  var nombre = button.data('nombre')
+  var tipo = button.data('tipo')
+  var fecha = button.data('fecha')
+  var hora = button.data('hora')
+  var direccion = button.data('direccion')
+  // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  // modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+  // modal.find('.modal-body textarea').text(adress)
+  modal.find('.modal-body input[name="nombre"]').val(nombre)
+  modal.find('.modal-body input[name="tipo"]').val(tipo)
+  modal.find('.modal-body input[name="fecha"]').val(fecha)
+  modal.find('.modal-body input[name="hora"]').val(hora)
+  modal.find('.modal-body textarea[name="direccion"]').val(direccion)
+})

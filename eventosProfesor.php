@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li><a href="profesor.php">Perfil</a></li>
                     <li><a href="#">Noticias</a></li>
                     <li><a href="alumnos.php">Alumnos</a></li>
-                    <li><a href="eventosProfesor.php">Torneos</a></li>
+                    <li><a href="#">Torneos</a></li>
                     <li><a href="seguridad_prof.php">Seguridad</a></li>
                     <li><a href="logout.php">Salir</a></li>
                 </ul>
@@ -42,35 +42,36 @@ if (!isset($_SESSION['user_id'])) {
             <?php
             $usuario = $_SESSION['user_id'];
             include('dbmanager/config.php');
-            $sqlNoticia = "SELECT news_id, title, body, picture, date_news, first_name, last_name, category FROM news
-                    INNER JOIN manager ON news.reg_code1 = manager.reg_code
-                    INNER JOIN category ON news.category_id1 = category.category_id
-                    ORDER BY news_id DESC";
-            $resultNoticia = $mysqli->query($sqlNoticia);
-            if ($resultNoticia->num_rows > 0) {
-                while ($row = $resultNoticia->fetch_assoc()) {
-                    $idNoticia = $row['news_id'];
-                    $titulo = $row['title'];
-                    $autor = $row['first_name'] . " " . $row['last_name'];
-                    $fecha = $row['date_news'];
-                    $noticia = $row['body'];
-                    $categoria = $row['category'];
+            $sqlEvento = "SELECT * FROM tournament
+                        ORDER BY tournament_id DESC";
+            $resultEvento = $mysqli->query($sqlEvento);
+            if ($resultEvento->num_rows > 0) {
+                while ($row = $resultEvento->fetch_assoc()) {
+                    $idEvento = $row['tournament_id'];
+                    $nombreEvento = $row['name_t'];
+                    $tipo = $row['type_t'];
+                    $direccion = $row['location_t'];
+                    $fecha = $row['date_t'];
+                    $hora = $row['time_t'];
                     $imagen = $row['picture']; ?>
                     <section id="publicaciones">
                         <article class="post">
-                            <h2 class="titulo-post"><?php echo $titulo ?></h2>
+                            <h2 class="titulo-post"><?php echo $nombreEvento ?></h2>
                             <img src="data:image/jpg;base64,<?php echo base64_encode($imagen) ?>" class="img-post">
                             <p>
-                                <strong>Por: </strong><span class="datos-publicaciones"><?php echo $autor ?></span>
+                                <strong>Tipo: </strong><span class="datos-publicaciones"><?php echo $tipo ?></span>
                                 &nbsp; &nbsp;
                                 <strong>Fecha: </strong><span class="datos-publicaciones"><?php echo $fecha ?></span>
                                 &nbsp; &nbsp;
-                                <strong>Categoría: </strong><span class="datos-publicaciones"><?php echo $categoria ?></span>
+                                <strong>Hora: </strong><span class="datos-publicaciones"><?php echo $hora ?></span>
                             </p>
                             <p class="texto-post">
-                                <?php echo $noticia ?>
+                                <strong>Sede del evento: </strong>
+                                <?php echo $direccion ?>
                             </p>
+                            <div class="btni"><button class="inscripcion">Inscripciones</button></div>
                         </article>
+                        
 
                     </section>
             <?php
