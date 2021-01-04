@@ -205,6 +205,14 @@ if (!isset($_SESSION['user_id'])) {
                                 <input type="date" class="form-control" id="add_fecha" name="add_fecha" required>
                             </div>
                             <div class="form-group">
+                                <label for="add_sexo" class="col-form-label">Sexo:</label>
+                                <select name="add_sexo" id="add_sexo" class="form-control" required>
+                                    <option value="0">Seleccione una opción</option>
+                                    <option value="Hombre">Masculino</option>
+                                    <option value="Mujer">Femenino</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="add_telefono" class="col-form-label">Teléfono:</label>
                                 <input type="tel" class="form-control" id="add_telefono" name="add_telefono" required>
                             </div>

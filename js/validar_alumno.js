@@ -10,12 +10,13 @@ function validarAlumno() {
     const foto = document.getElementById('add_foto').value;
     const direccion = document.getElementById('add_direccion').value;
     const gym = document.getElementById('gimnasio').textContent;
+    const sexo = document.getElementById('add_sexo').value;
 
     const extPermitidas = /(.png|.jpg|jpeg)$/i;
     if(gym == "1"){
         alert("Antes de agregar a un alumno debe ingresar el gimnasio al que pertenece");
         return false;
-    }else if (nombre.trim() == "" || apellido.trim() == "" || fecha.trim() == "" || telefono.trim() == "" || emergencias.trim() == "" || sangre === "3" || cinta === "0" || estado === "3" || foto.trim() == "" || direccion.trim() == "") {//validar todos los campos vacios
+    }else if (nombre.trim() == "" || apellido.trim() == "" || fecha.trim() == "" || telefono.trim() == "" || emergencias.trim() == "" || sangre === "3" || cinta === "0" || estado === "3" || sexo === "0" || foto.trim() == "" || direccion.trim() == "") {//validar todos los campos vacios
         alert("Todos los campos son obligatorios");
         return false;
     } else if (nombre.length > 25) {

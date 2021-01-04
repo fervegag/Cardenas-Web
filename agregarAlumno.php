@@ -31,14 +31,15 @@ if(!isset($_POST['add_nombre'])||!isset($_POST['add_apellido'])||!isset($_POST['
     $cinta = $_POST['add_cinta'];
     $estado = $_POST['add_estado'];
     $direccion = $_POST['add_direccion'];
+    $sexo = $_POST['add_sexo'];
     $revisar = getimagesize($_FILES['add_foto']['tmp_name']);
     if ($revisar !== false) {
         $image = $_FILES['add_foto']['tmp_name'];
         $imgContenido = addslashes(file_get_contents($image));
         // $sqlnuevaNoticia = "INSERT INTO `news` (`news_id`, `title`, `body`, `picture`, `date_news`, `reg_code1`, `category_id1`) VALUES
         //                     (NULL, '$titulo', '$noticia', '$imgContenido', '$fecha', '$id', '4')";
-        $sqlNuevoAlumno ="INSERT INTO `pupil` (`pupil_id`,`first_name`, `last_name`, `birthdate`, `phone_num`, `emergency_phone`, `adress`, `blood_type`, `picture`, `status_p`, `belt_id2`, `gym_code2`) VALUES
-                            (NULL, '$nombre', '$apellido', '$fecha', '$telefono', '$emergencias', '$direccion', '$sangre', '$imgContenido', $estado, '$cinta', '$gym')";
+        $sqlNuevoAlumno ="INSERT INTO `pupil` (`pupil_id`,`first_name`, `last_name`, `birthdate`, `sexo`, `phone_num`, `emergency_phone`, `adress`, `blood_type`, `picture`, `status_p`, `belt_id2`, `gym_code2`) VALUES
+                            (NULL, '$nombre', '$apellido', '$fecha', '$sexo', '$telefono', '$emergencias', '$direccion', '$sangre', '$imgContenido', $estado, '$cinta', '$gym')";
         $nuevoAlumno = $mysqli->query($sqlNuevoAlumno);
         if ($nuevoAlumno) {
             // echo "Archivo Subido Correctamente.";
