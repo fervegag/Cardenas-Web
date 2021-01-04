@@ -61,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
                             <p>
                                 <strong>Tipo: </strong><span class="datos-publicaciones"><?php echo $tipo ?></span>
                                 &nbsp; &nbsp;
-                                <strong>Fecha: </strong><span class="datos-publicaciones"><?php echo $fecha ?></span>
+                                <strong>Fecha: </strong><span class="datos-publicaciones" id="fecha"><?php echo $fecha ?></span>
                                 &nbsp; &nbsp;
                                 <strong>Hora: </strong><span class="datos-publicaciones"><?php echo $hora ?></span>
                             </p>
@@ -69,9 +69,18 @@ if (!isset($_SESSION['user_id'])) {
                                 <strong>Sede del evento: </strong>
                                 <?php echo $direccion ?>
                             </p>
-                            <div class="btni"><button class="inscripcion">Inscripciones</button></div>
+                            <?php
+                            date_default_timezone_set("America/Mexico_City");
+                            $fechaActual =  strtotime(date("d-m-Y H:i:s",time()));
+                            $fechaTorneo = strtotime($fecha." ".$hora);
+                            if($fechaActual < $fechaTorneo){ ?>
+                                <div class="btni"><a href="inscripciones.php?id=<?php echo $idEvento; ?>"><button class="inscripcion">Inscripciones</button></a></div>
+                            <?php
+                            }
+                            ?>
+                            
                         </article>
-                        
+
 
                     </section>
             <?php
@@ -99,6 +108,7 @@ if (!isset($_SESSION['user_id'])) {
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/javaS1.js"></script>
+
 
 </body>
 

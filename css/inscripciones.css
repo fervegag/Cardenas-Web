@@ -1,0 +1,96 @@
+html,
+body {
+  position:static;
+  margin-top: 3rem;
+  font-family: 'Roboto', sans-serif !important;
+}
+.container {
+  position:static;
+}
+
+table {
+  width: 500px;
+  margin: 0px auto;
+  padding: 40px 20px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0);
+}
+
+th,
+td {
+  color:#ffff;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+th {
+  text-align: center;
+}
+
+thead th {
+  background-color: #940811;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+tbody td {
+  position: relative;
+  color:#000;
+}
+
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  z-index: -1;
+}
+
+.title-prof{
+  text-align: center;
+}
+
+.agregar{
+    /* width: 180px;
+    padding: .7em;
+    outline: 0;
+    color:rgb(255, 255, 255) !important;
+	border-bottom: none !important;
+	background: #000 !important;
+    border: 0;
+    text-transform: uppercase;
+	padding: 1em;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: Helvetica !important; */
+	border-radius: 5px !important;
+	padding: 5px 4px !important;
+	margin-left: 5px !important;
+	border: 0px !important;
+	color: rgb(248, 248, 248) !important;
+	background:  #940811 !important;
+	box-shadow: 0px 5px 5px #ccc !important;
+	margin-bottom: 10px !important;
+	font-size: 15pt !important;
+  margin-top: 10px;
+  width: 62%;
+}
+.boton{
+  text-align: center;
+}
+.tablas{
+  text-align: center;
+}
+.inscribir{
+    display: inline-block;
+    margin-right: 50px;
+}
+.inscritos{
+    display: inline-block;
+}

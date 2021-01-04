@@ -176,6 +176,7 @@ main{
 	font-size: 13pt;
 	margin-top: 10px;
 	width: 20%;
+	cursor: pointer;
 }
 .btni{
 	text-align: right;
