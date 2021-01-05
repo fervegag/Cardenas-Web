@@ -3,8 +3,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
-}else{
-
+} else {
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +15,8 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/confirmaciones.css">
+    <!-- <link rel="stylesheet" href="css/confirmaciones.css"> -->
+    <link rel="stylesheet" href="css/inscripciones.css">
     <title>Confirmaciones</title>
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <div class="container logo-nav-container">
             <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
             <span class="menu-icon">Ver menú</span>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li><a href="administrativo.php">Perfil</a></li>
                     <li><a href="noticias_admin.php">Noticias</a></li>
                     <li><a href="eventosAdmin.php">Eventos</a></li>
-                    <li><a href="confirmaciones.php">Panel</a></li>
+                    <li><a href="panel.php">Panel</a></li>
                     <li><a href="seguridad_admin.php">Seguridad</a></li>
                     <li><a href="logout.php">Salir</a></li>
                 </ul>
@@ -42,14 +42,52 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </header>
     <main class="main">
-        <h1>Aquí va un menú mamalón</h1>
-        <a href="confirmaciones.php">CONFIRMACIONES</a>
-        </br>
-        <a href="administra_prof.php">ADMINISTRACIÓN DE PROFESORES</a>
-        <br>
-        <a href="gimnasios.php">GESTIONAR GIMNASIOS</a>
-        <br>
-        <a href="archivo.php">REGISTRO DE TORNEOS</a>
+        <div class="ConfirmProf">
+            <h1 class="title-prof">Registro de combates</h1>
+            <form method="POST">
+                <table class="archivo">
+                    <thead>
+                        <tr>
+                            <th>Torneo</th>
+                            <th>Peleador 1</th>
+                            <th>Peleador 2</th>
+                            <th>Ganador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include('dbmanager/config.php');
+                        $sqlTorneos = "SELECT tournament_id2, fight_id AS codigo, name_t AS torneo, fighter1.first_name AS peleador1, fighter2.first_name AS peleador2, winner AS ganador 
+                                         FROM fight
+                                        INNER JOIN tournament ON tournament.tournament_id=fight.tournament_id2
+                                        INNER JOIN pupil AS fighter1 ON fighter1.pupil_id=fight.pupil_id2
+                                        INNER JOIN pupil AS fighter2 ON fighter2.pupil_id=fight.pupil_id3";
+                        $resultTorneos = $mysqli->query($sqlTorneos);
+                        if ($resultTorneos->num_rows > 0) {
+                            while ($row = $resultTorneos->fetch_assoc()) {
+                                $idTorneo = $row['tournament_id2'];
+                                $codigo = $row['codigo'];
+                                $torneo = $row['torneo'];
+                                $peleador1 = $row['peleador1'];
+                                $peleador2 = $row['peleador2'];
+                                $ganador = $row['ganador']; ?>
+
+                                <tr class="infoPelea">
+                                    <td class="code"><?php echo $torneo; ?></td>
+                                    <td class="peleador1"><?php echo $peleador1; ?></td>
+                                    <td class="peleador2"><?php echo $peleador2; ?></td>
+                                    <td class="ganador"><?php echo $ganador; ?></td>
+                                </tr>
+                        <?php
+                            }
+                        } else {
+                        }
+                        ?>
+                    </tbody>
+
+                </table>
+            </form>
+        </div>
     </main>
     <footer class="footer">
         <div class="contanier-img">
