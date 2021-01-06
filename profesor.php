@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -104,30 +104,30 @@ if (!isset($_SESSION['user_id'])) {
         <div class="container">
             <div class="row">
                 <!-- <div class="col-sm-4"> -->
-                    <div class="card text-center">
-                        <div class="option">
-                            <div class="title">
-                                <center> <i class="fa fa-user" aria-hidden="true"></i> </center>
-                            </div>
-                            <ul>
-                                <center>
-                                    <li> <i class="#" aria-hidden="true"> </i> <b>
-                                            <h2>Bienvenido <br> <?php echo $Nombre ?> </br> </h2>
-                                        </b> </li>
-                                </center>
-                                <li> <i class="fa fa-building" aria-hidden="true"> </i> <b> GYM</b> <br> <?php echo $gym ?> </br> </li>
-                                <li> <i class="fa fa-check" aria-hidden="true"> </i> <b> Cinta</b> <br> <?php echo $Grado ?> </br> </li>
-                                <li> <i class="fa fa-calendar" aria-hidden="true"> </i> <b> Fecha de nacimiento</b> <br> <?php echo $Nacimiento ?> </br> </li>
-                                <li> <i class="fa fa-envelope-square" aria-hidden="true"> </i> <b> Email</b> <br> <?php echo $Correo ?> </br> </li>
-                                <li> <i class="fa fa-phone" aria-hidden="true"> </i> <b> Télefono</b> <br> <?php echo $Numero ?> </br> </li>
-                                <li class="boton"><button class="update" data-toggle="modal" data-target="#editarprof" data-whatever="<?php echo $usuario ?>" data-grado="<?php echo $Grado ?>" data-email="<?php echo $Correo ?>" data-telefono="<?php echo $Numero ?>">Actualizar</button></li>
-                            </ul>
+                <div class="card text-center">
+                    <div class="option">
+                        <div class="title">
+                            <center> <i class="fa fa-user" aria-hidden="true"></i> </center>
                         </div>
+                        <ul>
+                            <center>
+                                <li> <i class="#" aria-hidden="true"> </i> <b>
+                                        <h2>Bienvenido <br> <?php echo $Nombre ?> </br> </h2>
+                                    </b> </li>
+                            </center>
+                            <li> <i class="fa fa-building" aria-hidden="true"> </i> <b> GYM</b> <br> <?php echo $gym ?> </br> </li>
+                            <li> <i class="fa fa-check" aria-hidden="true"> </i> <b> Cinta</b> <br> <?php echo $Grado ?> </br> </li>
+                            <li> <i class="fa fa-calendar" aria-hidden="true"> </i> <b> Fecha de nacimiento</b> <br> <?php echo $Nacimiento ?> </br> </li>
+                            <li> <i class="fa fa-envelope-square" aria-hidden="true"> </i> <b> Email</b> <br> <?php echo $Correo ?> </br> </li>
+                            <li> <i class="fa fa-phone" aria-hidden="true"> </i> <b> Télefono</b> <br> <?php echo $Numero ?> </br> </li>
+                            <li class="boton"><button class="update" data-toggle="modal" data-target="#editarprof" data-whatever="<?php echo $usuario ?>" data-grado="<?php echo $Grado ?>" data-email="<?php echo $Correo ?>" data-telefono="<?php echo $Numero ?>">Actualizar</button></li>
+                        </ul>
                     </div>
+                </div>
                 <!-- </div> -->
             </div>
         </div>
-        
+
         <div class="modal fade" id="editarprof" tabindex="-1" role="dialog" aria-labelledby="editarprofLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -151,18 +151,18 @@ if (!isset($_SESSION['user_id'])) {
                                     <?php
                                     $sqlCinta = "SELECT * FROM gym WHERE gym_code != '1'";
                                     $resultCinta = $mysqli->query($sqlCinta);
-                                    if($resultCinta->num_rows > 0){
-                                        while($row2 = $resultCinta->fetch_assoc()){
+                                    if ($resultCinta->num_rows > 0) {
+                                        while ($row2 = $resultCinta->fetch_assoc()) {
                                             $idGym = $row2['gym_code'];
-                                            $gym = $row2['gym_name']; 
-                                            ?>
+                                            $gym = $row2['gym_name'];
+                                    ?>
                                             <option value="<?php echo $idGym ?>"><?php echo $gym ?></option>
-                                        <?php
+                                    <?php
                                         }
-                                    }else{
+                                    } else {
                                         echo "No se devolvieron resultados";
                                     }
-                                    
+
                                     ?>
                                 </select>
                             </div>
@@ -174,15 +174,15 @@ if (!isset($_SESSION['user_id'])) {
                                     <?php
                                     $sqlCinta = "SELECT * FROM belt";
                                     $resultCinta = $mysqli->query($sqlCinta);
-                                    if($resultCinta->num_rows > 0){
-                                        while($row2 = $resultCinta->fetch_assoc()){
+                                    if ($resultCinta->num_rows > 0) {
+                                        while ($row2 = $resultCinta->fetch_assoc()) {
                                             $idCinta = $row2['belt_id'];
-                                            $color = $row2['color']; 
-                                            ?>
+                                            $color = $row2['color'];
+                                    ?>
                                             <option value="<?php echo $idCinta ?>"><?php echo $color ?></option>
-                                        <?php
+                                    <?php
                                         }
-                                    }else{
+                                    } else {
                                         echo "No se devolvieron resultados";
                                     }
                                     $mysqli->close();

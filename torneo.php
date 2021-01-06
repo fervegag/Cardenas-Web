@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_id'])) {
                                         inner join tournament on tournament.tournament_id=fight.tournament_id2
                                         inner join pupil as fighter1 on fighter1.pupil_id=fight.pupil_id2
                                         inner join pupil as fighter2 on fighter2.pupil_id=fight.pupil_id3
-                                        WHERE tournament_id2 = '".$idTorneo."'";  
+                                        WHERE tournament_id2 = '" . $idTorneo . "'";
                         $c = 1;
                         $resultado = $mysqli->query($sqlPeleas);
                         if ($resultado->num_rows > 0) {

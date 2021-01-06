@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -71,14 +71,14 @@ if (!isset($_SESSION['user_id'])) {
                             </p>
                             <?php
                             date_default_timezone_set("America/Mexico_City");
-                            $fechaActual =  strtotime(date("d-m-Y H:i:s",time()));
-                            $fechaTorneo = strtotime($fecha." ".$hora);
-                            if($fechaActual < $fechaTorneo){ ?>
+                            $fechaActual =  strtotime(date("d-m-Y H:i:s", time()));
+                            $fechaTorneo = strtotime($fecha . " " . $hora);
+                            if ($fechaActual < $fechaTorneo) { ?>
                                 <div class="btni"><a href="inscripciones.php?id=<?php echo $idEvento; ?>"><button class="inscripcion">Inscripciones</button></a></div>
                             <?php
                             }
                             ?>
-                            
+
                         </article>
 
 

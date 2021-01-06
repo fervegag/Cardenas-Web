@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -46,7 +46,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="ConfirmProf">
             <h1 class="title-prof">Gimnasios Registrados</h1>
             <div class="boton">
-                <button class="agregar "data-toggle="modal" data-target="#nuevoGym" data-nuevoGym="Nuevo">Nuevo Gimasio</button>
+                <button class="agregar " data-toggle="modal" data-target="#nuevoGym" data-nuevoGym="Nuevo">Nuevo Gimasio</button>
             </div>
             <form method="POST">
                 <table class="tabla">
@@ -64,11 +64,11 @@ if (!isset($_SESSION['user_id'])) {
                         $sqlGym = "SELECT * FROM gym WHERE gym_code != '1'";
                         $resultado = $mysqli->query($sqlGym);
                         if ($resultado->num_rows > 0) {
-                            while ($row2 = $resultado->fetch_assoc()) { 
+                            while ($row2 = $resultado->fetch_assoc()) {
                                 $code = $row2['gym_code'];
                                 $name = $row2['gym_name'];
                                 $adress = $row2['adress'];
-                                ?>
+                        ?>
                                 <tr class="infoProfe">
                                     <td class="code"><?php echo $code ?></td>
                                     <td class="name"><?php echo $name ?></td>
@@ -86,9 +86,9 @@ if (!isset($_SESSION['user_id'])) {
                     </tbody>
                 </table>
             </form>
-            
+
         </div>
- 
+
         <div class="modal fade" id="editargym" tabindex="-1" role="dialog" aria-labelledby="editargymLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -153,7 +153,7 @@ if (!isset($_SESSION['user_id'])) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                       
+
                     </div>
                 </div>
             </div>

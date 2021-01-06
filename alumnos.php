@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -77,9 +77,9 @@ if (!isset($_SESSION['user_id'])) {
                     $gymAlumno = $row['gym_code2'];
                     //Diseño
                     //Estado del alumno
-                    if($status_p === '1'){
+                    if ($status_p === '1') {
                         $estado = "Activo";
-                    }else{
+                    } else {
                         $estado = "Inactivo";
                     }
                     //Edad
@@ -87,7 +87,7 @@ if (!isset($_SESSION['user_id'])) {
                     $hoy = new DateTime();
                     $edad = $hoy->diff($fechaNacimiento);
             ?>
-                    
+
                     <section id="publicaciones">
                         <article class="post">
                             <h2 class="titulo-post"><?php echo $nombreCompleto ?></h2>
@@ -113,9 +113,7 @@ if (!isset($_SESSION['user_id'])) {
                             <span class="operaciones">
                                 <a href="eliminar_alumno.php?id=<?php echo $idAlumno; ?>" class="link_delete"><i class="fas fa-trash-alt"></i></a>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarnoticia" data-whatever="<?php echo $idNoticia ?>">Open modal for <?php echo $idNoticia ?> </button> -->
-                                <a href="#" data-toggle="modal" data-target="#editarAlumno" data-whatever="<?php echo $idAlumno ?>" data-edad="<?php echo $edad->y ?>" data-cinta="<?php echo $grado ?>" 
-                                data-tel="<?php echo $numero ?>"data-emerg="<?php echo $emergencias ?>" data-sangre="<?php echo $tipoSangre ?>" data-estado="<?php echo $estado ?>"
-                                data-nombre="<?php echo $nombre ?>" data-apellido="<?php echo $apellido ?>" data-dir="<?php echo $dir ?>"><i class="fas fa-edit"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#editarAlumno" data-whatever="<?php echo $idAlumno ?>" data-edad="<?php echo $edad->y ?>" data-cinta="<?php echo $grado ?>" data-tel="<?php echo $numero ?>" data-emerg="<?php echo $emergencias ?>" data-sangre="<?php echo $tipoSangre ?>" data-estado="<?php echo $estado ?>" data-nombre="<?php echo $nombre ?>" data-apellido="<?php echo $apellido ?>" data-dir="<?php echo $dir ?>"><i class="fas fa-edit"></i></a>
                             </span>
                         </article>
                     </section>
@@ -127,7 +125,7 @@ if (!isset($_SESSION['user_id'])) {
             ?>
         </section>
         <p id="gimnasio" style="color: #E3E3E3;"><?php echo $gymProf; ?></p>
-        
+
         <div class="modal fade" id="editarAlumno" tabindex="-1" role="dialog" aria-labelledby="editarAlumnoLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -162,7 +160,7 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="form-group">
                                 <label for="estado" class="col-form-label">Estado:</label>
                                 <!-- <input type="text" class="form-control" id="estado" name="estado"> -->
-                                <select id="estado"class="form-control" required>
+                                <select id="estado" class="form-control" required>
                                     <option value="3" name="estado">Seleccione una opción</option>
                                     <option value="1">Activo</option>
                                     <option value="0">Inactivo</option>
@@ -192,7 +190,7 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
                     <div class="modal-body">
                         <form action="agregarAlumno.php" method="POST" enctype="multipart/form-data" onsubmit="return validarAlumno();">
-                        <div class="form-group">
+                            <div class="form-group">
                                 <label for="add_nombre" class="col-form-label">Nombre:</label>
                                 <input type="text" class="form-control" id="add_nombre" name="add_nombre" required>
                             </div>
@@ -243,15 +241,15 @@ if (!isset($_SESSION['user_id'])) {
                                     <?php
                                     $sqlCintas = "SELECT * FROM belt";
                                     $resultCintas = $mysqli->query($sqlCintas);
-                                    if($resultCintas->num_rows > 0){
-                                        while($row2 = $resultCintas->fetch_assoc()){
+                                    if ($resultCintas->num_rows > 0) {
+                                        while ($row2 = $resultCintas->fetch_assoc()) {
                                             $idCinta = $row2['belt_id'];
                                             $cinta = $row2['color'];
-                                            ?>
+                                    ?>
                                             <option value="<?php echo $idCinta; ?>"><?php echo $cinta; ?></option>
-                                        <?php
+                                    <?php
                                         }
-                                    }else{
+                                    } else {
                                         echo "Consulta erronea";
                                     }
                                     ?>

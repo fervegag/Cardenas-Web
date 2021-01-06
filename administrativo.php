@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <img src="imagenes/logo-blanco.png" alt="logo" class="logo">
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
                 <ul class="show">
@@ -157,15 +157,15 @@ if (!isset($_SESSION['user_id'])) {
                                     <?php
                                     $sqlCinta = "SELECT * FROM belt";
                                     $resultCinta = $mysqli->query($sqlCinta);
-                                    if($resultCinta->num_rows > 0){
-                                        while($row2 = $resultCinta->fetch_assoc()){
+                                    if ($resultCinta->num_rows > 0) {
+                                        while ($row2 = $resultCinta->fetch_assoc()) {
                                             $idCinta = $row2['belt_id'];
-                                            $color = $row2['color']; 
-                                            ?>
+                                            $color = $row2['color'];
+                                    ?>
                                             <option value="<?php echo $idCinta ?>"><?php echo $color ?></option>
-                                        <?php
+                                    <?php
                                         }
-                                    }else{
+                                    } else {
                                         echo "No se devolvieron resultados";
                                     }
                                     $mysqli->close();
