@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
                 <ul class="show">
                     <li class="li_menu"><a href="administrativo.php">Perfil</a></li>
                     <li class="li_menu"><a href="#">Noticias</a></li>
-                    <li class="li_menu"><a href="#">Eventos</a></li>
+                    <li class="li_menu"><a href="eventosAdmin.php">Eventos</a></li>
                     <li class="li_menu"><a href="panel.php">Panel</a></li>
                     <li class="li_menu"><a href="seguridad_admin.php">Seguridad</a></li>
                     <li class="li_menu"><a href="logout.php">Salir</a></li>

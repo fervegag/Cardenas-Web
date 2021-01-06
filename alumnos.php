@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li><a href="profesor.php">Perfil</a></li>
                     <li><a href="noticias_profesor.php">Noticias</a></li>
                     <li><a href="#">Alumnos</a></li>
-                    <li><a href="#">Torneos</a></li>
+                    <li><a href="eventosProfesor.php">Torneos</a></li>
                     <li><a href="seguridad_prof.php">Seguridad</a></li>
                     <li><a href="logout.php">Salir</a></li>
                 </ul>
