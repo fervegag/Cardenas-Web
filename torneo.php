@@ -17,6 +17,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/confirmaciones.css"> -->
     <link rel="stylesheet" href="css/inscripciones.css">
+
     <title>Confirmaciones</title>
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -43,12 +44,14 @@ if (!isset($_SESSION['user_id'])) {
     </header>
     <main class="main">
         <div class="ConfirmProf">
-            <h1 class="title-prof">Registro de combates</h1>
+            <h1 class="title-prof">Orden de combates</h1>
+            <h2 class="title-inst">Instrucciones:</h2>
+            <p class="inst">Haga clic sobre el nombre del alumno que ganó el combate</p>
             <form method="POST">
-                <table class="archivo">
+                <table class="tabla orden">
                     <thead>
                         <tr>
-                            <th>Torneo</th>
+                            <th>Pelea</th>
                             <th>Peleador 1</th>
                             <th>Peleador 2</th>
                             <th>Ganador</th>
@@ -57,35 +60,41 @@ if (!isset($_SESSION['user_id'])) {
                     <tbody>
                         <?php
                         include('dbmanager/config.php');
-                        $sqlTorneos = "SELECT tournament_id2, fight_id AS codigo, name_t AS torneo, fighter1.first_name AS peleador1, fighter2.first_name AS peleador2, winner AS ganador 
-                                         FROM fight
-                                        INNER JOIN tournament ON tournament.tournament_id=fight.tournament_id2
-                                        INNER JOIN pupil AS fighter1 ON fighter1.pupil_id=fight.pupil_id2
-                                        INNER JOIN pupil AS fighter2 ON fighter2.pupil_id=fight.pupil_id3";
-                        $resultTorneos = $mysqli->query($sqlTorneos);
-                        if ($resultTorneos->num_rows > 0) {
-                            while ($row = $resultTorneos->fetch_assoc()) {
-                                $idTorneo = $row['tournament_id2'];
-                                $codigo = $row['codigo'];
-                                $torneo = $row['torneo'];
-                                $peleador1 = $row['peleador1'];
-                                $peleador2 = $row['peleador2'];
-                                $ganador = $row['ganador']; ?>
-
-                                <tr class="infoPelea">
-                                    <td class="code"><?php echo $torneo; ?></td>
-                                    <td class="peleador1"><?php echo $peleador1; ?></td>
-                                    <td class="peleador2"><?php echo $peleador2; ?></td>
+                        $idTorneo = $_GET['id'];
+                        $sqlPeleas = "SELECT fight_id, name_t as torneo, 
+                                        CONCAT(fighter1.first_name,' ',fighter1.last_name) as peleador1,
+                                        fighter1.pupil_id as id1, 
+                                        CONCAT(fighter2.first_name,' ',fighter2.last_name) as peleador2, 
+                                        fighter2.pupil_id as id2,
+                                        winner as ganador
+                                        from fight
+                                        inner join tournament on tournament.tournament_id=fight.tournament_id2
+                                        inner join pupil as fighter1 on fighter1.pupil_id=fight.pupil_id2
+                                        inner join pupil as fighter2 on fighter2.pupil_id=fight.pupil_id3
+                                        WHERE tournament_id2 = '".$idTorneo."'";  
+                        $c = 1;
+                        $resultado = $mysqli->query($sqlPeleas);
+                        if ($resultado->num_rows > 0) {
+                            while ($row1 = $resultado->fetch_assoc()) {
+                                $pelea = $row1['fight_id'];
+                                $id1 = $row1['id1'];
+                                $peleador1 = $row1['peleador1'];
+                                $id2 = $row1['id2'];
+                                $peleador2 =  $row1['peleador2'];
+                                $ganador = $row1['ganador'];
+                        ?>
+                                <tr class="infoProfe">
+                                    <td class="contador"><?php echo $c++; ?></td>
+                                    <td class="p1"><a href="elegirGanador.php?idGanador=<?php echo $id1 ?>&idPelea=<?php echo $pelea ?>&Peleador=<?php echo $peleador1 ?>&idTorneo=<?php echo $idTorneo ?>"><?php echo $peleador1; ?></a></td>
+                                    <td class="p2"><a href="elegirGanador.php?idGanador=<?php echo $id2 ?>&idPelea=<?php echo $pelea ?>&Peleador=<?php echo $peleador2 ?>&idTorneo=<?php echo $idTorneo ?>"><?php echo $peleador2; ?></a></td>
                                     <td class="ganador"><?php echo $ganador; ?></td>
                                 </tr>
                         <?php
                             }
-                        } else {
                         }
                         $mysqli->close();
                         ?>
                     </tbody>
-
                 </table>
             </form>
         </div>

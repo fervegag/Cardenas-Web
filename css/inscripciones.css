@@ -20,7 +20,16 @@ table {
 .archivo{
   width: 800px;
 }
-
+.orden{
+  width: 70%;
+}
+a{
+  text-decoration: none;
+  color: #940811;
+}
+.title-inst, .inst{
+  text-align: center;
+}
 th,
 td {
   color:#ffff;

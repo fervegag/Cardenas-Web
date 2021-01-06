@@ -95,6 +95,20 @@ if (!isset($_SESSION['user_id'])) {
                                 <a href="eliminar_evento.php?id=<?php echo $idEvento; ?>" class="link_delete"><i class="fas fa-trash-alt"></i></a>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarnoticia" data-whatever="<?php echo $idNoticia ?>">Open modal for <?php echo $idNoticia ?> </button> -->
                                 <a href="#" data-toggle="modal" data-target="#editarevento" data-whatever="<?php echo $idEvento ?>" data-tipo="<?php echo $tipo ?>" data-fecha="<?php echo $fecha ?>" data-hora="<?php echo $hora ?>" data-direccion="<?php echo $direccion ?>" data-nombre="<?php echo $nombreEvento ?>"><i class="fas fa-edit"></i></a>
+                                <?php
+                                date_default_timezone_set("America/Mexico_City");
+                                $fechaActual =  strtotime(date("d-m-Y"));
+                                $fechaTorneo = strtotime($fecha);
+                                $tiempo = date('H') . ':' . date('i') . ':' . date('s');
+                                $time1 = new DateTime($tiempo);
+                                $time2 = new DateTime($hora);
+                                $diffHoras = $time2->diff($time1);
+                                $diferencia = $diffHoras->format("%i");
+                                if ($fechaActual == $fechaTorneo && $diferencia > 0 && $diferencia < 30) { ?>
+                                    <a href="generarPeleas.php?id=<?php echo $idEvento; ?>"><button class="inscripcion">Iniciar</button></a>
+                                <?php
+                                }
+                                ?>
                             </span>
                         </article>
                     </section>
