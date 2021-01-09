@@ -20,7 +20,7 @@
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="deporte.php">Deporte</a></li>

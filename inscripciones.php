@@ -37,7 +37,7 @@ if ($resultGymProf->num_rows > 0) {
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="profesor.php">Perfil</a></li>
                     <li><a href="noticias_profesor.php">Noticias</a></li>
                     <li><a href="alumnos.php">Alumnos</a></li>

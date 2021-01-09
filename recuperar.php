@@ -19,7 +19,7 @@
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="deporte.php">Deporte</a></li>
@@ -63,15 +63,15 @@
             </form>
             <?php
             include('dbmanager/config.php');
-            if (isset($_POST['usuario']) && isset($_POST['correo']) && isset($_POST['tipoUsuario'])){
+            if (isset($_POST['usuario']) && isset($_POST['correo']) && isset($_POST['tipoUsuario'])) {
                 $user = $_POST['usuario'];
                 $email = $_POST['correo'];
                 $userType = $_POST['tipoUsuario'];
-                switch ($userType){
+                switch ($userType) {
                     case 'prof':
                         $sql = "SELECT email FROM instructor WHERE reg_code ='" . $user . "'";
                         $resultado = $mysqli->query($sql);
-                        if ($resultado->num_rows > 0){
+                        if ($resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
                                 $emailRequest = $row['email'];
                             }
@@ -79,19 +79,19 @@
                                 echo "<script>
                                     alert('El correo electrónico no coincide');
                                 </script>";
-                            }else{
-                                header('location: email_recupera.php?user='.$user.'&email='.$email);
+                            } else {
+                                header('location: email_recupera.php?user=' . $user . '&email=' . $email);
                             }
-                        }else{
+                        } else {
                             echo "<script>
                                 alert('Usuario no encontrado');
                             </script>";
                         }
-                    break;
+                        break;
                     case 'admin':
                         $sql = "SELECT email FROM manager WHERE reg_code ='" . $user . "'";
                         $resultado = $mysqli->query($sql);
-                        if ($resultado->num_rows > 0){
+                        if ($resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
                                 $emailRequest = $row['email'];
                             }
@@ -99,23 +99,21 @@
                                 echo "<script>
                                     alert('El correo electrónico no coincide');
                                 </script>";
-                            }else{
-                                header('location: email_recupera.php?user='.$user.'&email='.$email);
+                            } else {
+                                header('location: email_recupera.php?user=' . $user . '&email=' . $email);
                             }
-                        }else{
+                        } else {
                             echo "<script>
                                 alert('Usuario no encontrado');
                             </script>";
                         }
-                    break;
+                        break;
                     default:
                         echo "<script>
                             alert('Usuario no encontrado');
                         </script>";
                 }
-                
-            }else{
-                
+            } else {
             }
 
 

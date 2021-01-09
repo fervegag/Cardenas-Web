@@ -6,7 +6,7 @@
     <link rel="icon" href="imagenes/dragon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estilobanner.css">
+    <link rel="stylesheet" href="css/banner.css">
     <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <title>Dragones Cárdenas</title>
 </head>
@@ -18,7 +18,7 @@
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="deporte.php">Deporte</a></li>
@@ -28,29 +28,39 @@
             </nav>
         </div>
     </header>
-    <main class="main">
-        <section id="banner">
-            <img src="imagenes/imagenbanner.jpg">
-            <div class="contenedor">
-                <h2>DRAGONES CARDENAS</h2>
-                <p>Las artes marciales son un arte porque representa un estilo estético definido y marcial<br><br>¡Aprende las mejores técnicas y métodos creados para la defensa y lucha en combate!</p>
-                <a href="#">Leer más</a>
-            </div>
-        </section>
+    <!-- Intro -->
+			<section id="intro" class="main style1 dark fullscreen">
+				<div class="content">
+					<header>
+						<h2> Dragones Cárdenas </h2> <br>
+					</header>
+					<p> Las artes marciales son un arte porque representa un estilo estético definido y marcial</p>
+          <p> ¡Aprende las mejores técnicas y métodos creados para la defensa y lucha en combate!</p>
+					<footer>
+					</footer>
+				</div>
+			</section>
 
-        <section id="bienvenidos">
-            <div class="contenedor">
-                <h2>BIENVENIDOS A NUESTRO CLUB</h2>
-                <p>El deporte es para todas las edades.<br>Si te gustan los deportes de combate recuerda siempre acercarte a entrenar con profesionales.<br>Ven a tomar tu clase de cortesia, conoce el sistema de Artes Marciales Mixtas</p>
-            </div>
-        </section>
+		<!-- One -->
+			<section id="one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Bienvenidos</h2> <br>
+					</header>
+					<p> El deporte es para todas las edades. Si te gustan los deportes de combate recuerda siempre acercarte a entrenar con profesionales.Ven a tomar tu clase de cortesia, conoce el sistema de Artes Marciales Mixtas</p>
+				</div>
+			</section>
 
-        <section id="bannerdos">
-            <img src="imagenes/perteneces.png">
-            <div class="contenedor">
-            </div>
-        </section>
-    </main>
+		<!-- Two -->
+			<section id="two" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>¿Quieres conocer mas de nosotros?</h2> <br>
+					</header>
+			 	<a href="deporte.php" target="_blank">	<p> Da clic aqui</p> </a>
+				</div>
+			</section>
+
     <footer class="footer">
         <div class="contanier-img">
             <img class="contanier_img" src="imagenes/codeme.jpg" alt="contanier_img">

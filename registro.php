@@ -20,7 +20,7 @@
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="deporte.php">Deporte</a></li>
@@ -53,7 +53,7 @@
 
                     <div class="input-contenedor">
                         <i class="fas fa-calendar icon"></i>
-                        <input type="date" placeholder="Fecha de nacimiento" name="fecha"  min="1950-01-01" max="2002-01-01" required>
+                        <input type="date" placeholder="Fecha de nacimiento" name="fecha" min="1950-01-01" max="2002-01-01" required>
                     </div>
                     <div class="input-contenedor">
                         <!-- <i class="fab fa-d-and-d icon"></i> -->
@@ -113,13 +113,13 @@
                     $telefono = $_POST['telefono'];
                     $correo = $_POST['correo'];
                     $tipo = $_POST['tipo'];
-                    $sqlValidarUsuario = "SELECT user_code FROM logininfo Where user_code = '".$numero."'";
+                    $sqlValidarUsuario = "SELECT user_code FROM logininfo Where user_code = '" . $numero . "'";
                     $resultUsuario = $mysqli->query($sqlValidarUsuario);
-                    if($resultUsuario->num_rows > 0){
+                    if ($resultUsuario->num_rows > 0) {
                         echo "<script>
                                     alert('Número de registro en uso');
                                 </script>";
-                    }else{
+                    } else {
 
                         switch ($tipo) {
                             case '0':
@@ -128,13 +128,13 @@
                                 </script>";
                                 break;
                             case 'prof':
-                                $sqlValidarCorreo = "SELECT email FROM instructor Where email = '".$correo."'";
+                                $sqlValidarCorreo = "SELECT email FROM instructor Where email = '" . $correo . "'";
                                 $resultCorreo = $mysqli->query($sqlValidarCorreo);
-                                if($resultCorreo->num_rows > 0){
+                                if ($resultCorreo->num_rows > 0) {
                                     echo "<script>
                                         alert('Correo electrónico en uso');
                                     </script>";
-                                }else{
+                                } else {
                                     $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
                                     $passprof = "";
                                     //Reconstruimos la contraseña segun la longitud que se quiera
@@ -145,8 +145,8 @@
                                     $sqlIngresarProf = "INSERT INTO instructor (reg_code, first_name, last_name, birthdate, phone_num, email, belt_id1) 
                                                     VALUES ('" . $numero . "','" . $nombre . "','" . $apellidos . "','" . $fecha . "','" . $telefono . "','" . $correo . "','" . $cinta . "')";
                                     $sqlLoginInfo = "INSERT INTO logininfo (user_code, pass, status_user, type_user)
-                                                    VALUES('" . $numero . "','" . $passprof ."',b'0',b'0')";
-                                    if ($mysqli->query($sqlIngresarProf) === True &&$mysqli->query($sqlLoginInfo) === True) {
+                                                    VALUES('" . $numero . "','" . $passprof . "',b'0',b'0')";
+                                    if ($mysqli->query($sqlIngresarProf) === True && $mysqli->query($sqlLoginInfo) === True) {
                                         echo "<script>
                                         alert('Registro exitoso');
                                     </script>";
@@ -156,16 +156,16 @@
                                     </script>";
                                     }
                                 }
-    
+
                                 break;
                             case 'admin':
-                                $sqlValidarCorreo = "SELECT email FROM manager Where email = '".$correo."'";
+                                $sqlValidarCorreo = "SELECT email FROM manager Where email = '" . $correo . "'";
                                 $resultCorreo = $mysqli->query($sqlValidarCorreo);
-                                if($resultCorreo->num_rows > 0){
+                                if ($resultCorreo->num_rows > 0) {
                                     echo "<script>
                                         alert('Correo electrónico en uso');
                                     </script>";
-                                }else{
+                                } else {
                                     $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
                                     $passadmin = "";
                                     //Reconstruimos la contraseña segun la longitud que se quiera
@@ -176,7 +176,7 @@
                                     $sqlIngresarAdmin = "INSERT INTO manager (reg_code, first_name, last_name, birthdate, phone_num, email, belt_id3) 
                                                     VALUES ('" . $numero . "','" . $nombre . "','" . $apellidos . "','" . $fecha . "','" . $telefono . "','" . $correo . "','" . $cinta . "')";
                                     $sqlLoginInfo = "INSERT INTO logininfo (user_code, pass, status_user, type_user)
-                                                    VALUES('" . $numero . "','" . $passadmin ."',b'0',b'1')";
+                                                    VALUES('" . $numero . "','" . $passadmin . "',b'0',b'1')";
                                     if ($mysqli->query($sqlIngresarAdmin) === True && $mysqli->query($sqlLoginInfo) === True) {
                                         echo "<script>
                                         alert('Registro exitoso');

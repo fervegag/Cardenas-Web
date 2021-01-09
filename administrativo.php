@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
             <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li><a href="#">Perfil</a></li>
                     <li><a href="noticias_admin.php">Noticias</a></li>
                     <li><a href="eventosAdmin.php">Eventos</a></li>

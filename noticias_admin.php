@@ -23,10 +23,10 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-        <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
+            <a href="index.php"><img src="imagenes/logo-blanco.png" alt="logo" class="logo"></a>
             <span class="menu-icon">Ver menú</span>
             <nav class="navigation">
-                <ul class="show">
+                <ul>
                     <li class="li_menu"><a href="administrativo.php">Perfil</a></li>
                     <li class="li_menu"><a href="#">Noticias</a></li>
                     <li class="li_menu"><a href="eventosAdmin.php">Eventos</a></li>
@@ -178,7 +178,7 @@ if (!isset($_SESSION['user_id'])) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                       
+
                     </div>
                 </div>
             </div>

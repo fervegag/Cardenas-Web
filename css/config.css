@@ -1,0 +1,121 @@
+.main {
+    padding-top: 15rem; /*Espacio del header y del texto de abajo*/
+  }
+  body {
+    background-color: #E3E3E3;
+  }
+  
+  a {
+    color: #1e1e1e;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .paralax-mf {
+    position: relative;
+    padding: 8rem 0;
+  }
+  
+  /*------/ Ico Circle /------*/
+  
+  .ico-circle {
+    height: 100px;
+    width: 100px;
+    font-size: 2rem;
+    border-radius: 50%;
+    line-height: 1.55;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 0 10px #940811;
+    display: block;
+  }
+  
+  /*======================================
+  //--//-->   COUNTER
+  ======================================*/
+  
+  .counter-box {
+    color: #000;
+    text-align: center;
+  }
+  
+  .counter-ico .ico-circle {
+    height: 60px;
+    width: 60px;
+    line-height: 1.8;
+    box-shadow: 0 0 0 10px #940811;
+  }
+  
+  /*======================================
+  //--//-->   COUNTER
+  ======================================*/
+  
+  @media (min-width: 768px) {
+    .box-shadow-full {
+      padding: 3rem;
+    }
+  
+    .navbar-b.navbar-trans .nav-item,
+    .navbar-b.navbar-reduce .nav-item {
+      padding-left: 10px;
+    }
+  
+    .navbar-b.navbar-trans .nav-link:before,
+    .navbar-b.navbar-reduce .nav-link:before {
+      margin-left: 18px;
+    }
+  
+    .intro .intro-title {
+      font-size: 4.5rem;
+    }
+  
+    .intro .intro-subtitle {
+      font-size: 2.5rem;
+    }
+  
+    .intro-single .intro-title {
+      font-size: 3.5rem;
+    }
+  
+    .testimonial-box .description {
+      padding: 0 5rem;
+    }
+  
+    .post-box,
+    .form-comments,
+    .box-comments,
+    .widget-sidebar {
+      padding: 3rem;
+    }
+  
+    .blog-wrapper .article-title {
+      font-size: 1.9rem;
+    }
+  
+    .box-comments .list-comments .comment-author {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .testimonial-box .description {
+      padding: 0 8rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .testimonial-box .description {
+      padding: 0 13rem;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .bg-image {
+      background-attachment: scroll;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 15px;
+    }
+  }
